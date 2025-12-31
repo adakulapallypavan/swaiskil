@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-export function Header() {
+interface HeaderProps {
+  onEnrollClick?: () => void;
+}
+
+export function Header({ onEnrollClick }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { scrollY } = useScroll();
@@ -112,9 +116,13 @@ export function Header() {
             })}
             <motion.button
               onClick={() => {
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" });
+                if (onEnrollClick) {
+                  onEnrollClick();
+                } else {
+                  const enrollSection = document.getElementById("enroll");
+                  if (enrollSection) {
+                    enrollSection.scrollIntoView({ behavior: "smooth" });
+                  }
                 }
               }}
               className="ml-4 px-6 py-2 bg-white text-black rounded-full relative overflow-hidden group"
@@ -128,7 +136,7 @@ export function Header() {
                 transition={{ duration: 0.3 }}
               />
               <span className="relative z-10 text-black transition-colors duration-300 group-hover:text-black">
-                Get Started
+                Enroll
               </span>
             </motion.button>
           </div>
@@ -163,14 +171,18 @@ export function Header() {
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" });
+                if (onEnrollClick) {
+                  onEnrollClick();
+                } else {
+                  const enrollSection = document.getElementById("enroll");
+                  if (enrollSection) {
+                    enrollSection.scrollIntoView({ behavior: "smooth" });
+                  }
                 }
               }}
               className="w-full px-6 py-2 bg-white text-black rounded-full"
             >
-              Get Started
+              Enroll
             </button>
           </motion.div>
         )}

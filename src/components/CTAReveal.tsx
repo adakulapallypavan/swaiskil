@@ -2,7 +2,11 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
-export function CTAReveal() {
+interface CTARevealProps {
+  onEnrollClick?: () => void;
+}
+
+export function CTAReveal({ onEnrollClick }: CTARevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -87,6 +91,16 @@ export function CTAReveal() {
               className="flex justify-center mb-10"
             >
               <motion.button
+                onClick={() => {
+                  if (onEnrollClick) {
+                    onEnrollClick();
+                  } else {
+                    const enrollSection = document.getElementById("enroll");
+                    if (enrollSection) {
+                      enrollSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }
+                }}
                 className="group px-8 py-4 bg-white text-black rounded-full text-base md:text-lg relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
