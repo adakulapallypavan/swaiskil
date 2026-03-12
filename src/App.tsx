@@ -6,6 +6,7 @@ import { ChallengesScroll } from "./components/ChallengesScroll";
 import { SolutionsHorizontal } from "./components/SolutionsHorizontal";
 import { TechnologiesShowcase } from "./components/TechnologiesShowcase";
 import { DifferentiatorsSticky } from "./components/DifferentiatorsSticky";
+import { Certifications } from "./components/Certifications";
 import { CTAReveal } from "./components/CTAReveal";
 import { EnrollPage } from "./components/EnrollPage";
 import { Footer } from "./components/Footer";
@@ -38,6 +39,7 @@ export default function App() {
       <SolutionsHorizontal />
       <TechnologiesShowcase />
       <DifferentiatorsSticky />
+      <Certifications />
       <CTAReveal onEnrollClick={handleEnrollClick} />
       {showEnrollPage && <EnrollPage />}
       <Footer />

@@ -46,7 +46,7 @@ export function CTAReveal({ onEnrollClick }: CTARevealProps) {
 
       <motion.div
         style={{ scale, opacity }}
-        className="container mx-auto px-6 relative z-10 w-full"
+        className="w-full px-4 sm:px-6 relative z-10"
       >
         <div className="max-w-6xl mx-auto">
           {/* Main CTA */}
