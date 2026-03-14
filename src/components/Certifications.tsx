@@ -1,28 +1,10 @@
 import { motion } from "motion/react";
-import cmmiLogo from "../assets/cmmi maturity.png";
-import iafLogo from "../assets/iaf.webp";
 import dpttLogo from "../assets/dptt.webp";
 import msmeLogo from "../assets/msme.webp";
 
 const certifications = [
   {
     id: 1,
-    name: "CMMI Maturity Level 3",
-    certNo: "ECI/2411/0710",
-    logo: cmmiLogo,
-    accent: "#3b82f6",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    id: 2,
-    name: "ISO/IEC 27001:2022",
-    certNo: "IN241123021",
-    logo: iafLogo,
-    accent: "#8b5cf6",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    id: 3,
     name: "DPIIT Certificate",
     certNo: "DIPP162658",
     logo: dpttLogo,
@@ -30,7 +12,7 @@ const certifications = [
     color: "from-orange-500 to-red-500",
   },
   {
-    id: 4,
+    id: 2,
     name: "MSME Certificate",
     certNo: "UDYAM-DL-08-0069895",
     logo: msmeLogo,
@@ -69,7 +51,7 @@ export function Certifications() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.id}
