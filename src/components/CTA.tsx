@@ -60,7 +60,7 @@ export function CTA() {
                   </div>
                   <div className="text-left">
                     <div className="text-sm text-white/70">Email Us</div>
-                    <div className="text-white">contact@carnotresearch.com</div>
+                    <div className="text-white">swaiskil.tech@gmail.com</div>
                   </div>
                 </div>
               </motion.div>

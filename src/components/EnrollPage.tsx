@@ -21,7 +21,7 @@ export function EnrollPage() {
     );
     const emailSubject = encodeURIComponent(subject || "New Enrollment Request");
 
-    window.location.href = `mailto:contact@carnotresearch.com?subject=${emailSubject}&body=${body}`;
+    window.location.href = `mailto:swaiskil.tech@gmail.com?subject=${emailSubject}&body=${body}`;
     
     setTimeout(() => {
       event.currentTarget.reset();

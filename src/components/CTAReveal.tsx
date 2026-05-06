@@ -130,7 +130,7 @@ export function CTAReveal({ onEnrollClick }: CTARevealProps) {
               {
                 icon: Mail,
                 title: "Email Us",
-                content: "contact@carnotresearch.com",
+                content: "swaiskil.tech@gmail.com",
                 color: "from-blue-500 to-cyan-500",
               },
               {
